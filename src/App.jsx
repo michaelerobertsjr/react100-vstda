@@ -17,7 +17,7 @@ class App extends Component {
   }
 
 
- handleChange(e)  {   
+ handleChange(e)  {
     this.setState
     ({text:e.target.value})
     //console.log(this.state.text)
@@ -26,7 +26,7 @@ class App extends Component {
     this.setState
     ({priority: e.target.value})
   }
-   
+
   handleSubmit(event) {
     //console.log(event);
     this.setState({
@@ -38,24 +38,23 @@ class App extends Component {
     event.preventDefault();
     //console.log(this.state);
   }
-  handleDelete(){
-    console.log();
-
+  handleDelete(id) {
+    console.log('delete clicked', id);
   }
- 
+
 
 render() {
       return(
         <div>
-       <Userinput 
-       value={this.state.text} 
-       onChange={this.handleChange} 
+       <Userinput
+       value={this.state.text}
+       onChange={this.handleChange}
        onSubmit={this.handleSubmit}
        onChangeSelect={this.handleSelectChange}
        />
-       <Todo 
+       <Todo
        todos={this.state.todos}
-       onDelete={this.handleDelete()}
+       onDelete={this.handleDelete}
 
        />
       </div>
@@ -63,6 +62,6 @@ render() {
     }
   }
 
-  
+
 export default App;
 
